@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大用研究室</title>
+  <!--css-->
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./About_zemi.css">
+  <link rel="stylesheet" href="./About_activity.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--header-->
+  <header class="header">
+    <h1>
+      <a href="./大用研究室.html" class="header-title-link">大用研究室　関西学院大学</a>
+    </h1>
+
+    <!--navigation bar-->
+    <ul class="nav">
+      <li class="nav-item">
+        <a href ="./大用研究室.html">Top</a>
+      </li>
+      <!--Research dropdown-->
+      <li class="nav-item dropdown">
+        <a href="#">Research</a>
+        <ul class="dropdown-menu">
+          <li><a href="Research_2024.html">2024年度</a></li>
+          <li><a href="Research_2025.html">2025年度</a></li>
+        </ul>
+      </li>
+      <!--About dropdown-->
+      <li class="nav-item dropdown">
+        <a href="#">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="About_zemi.html">ゼミ</a></li>
+          <li><a href="About_activity.html">活動</a></li>
+          <li><a href="About_member.html">メンバー</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="./News_list.html">News</a>      
+      </li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- intro-section-->
+    <div class="intro-section">
+      <div class="intro-text">
+        <h2>学びも遊びも全力で！<br>
+          挑戦と好奇心が集まる</h2>
+        <p>
+        認知心理学から人工知能まで、幅広い分野を探究し、<br>
+        学生たちの未来を形作る知識とスキルを育む研究室です
+        </p>
+      </div>
+      <div class="main-image">
+        <img src="./images/intro_01.jpg" alt="ゼミ室の活動写真1" class="slide">
+        <img src="./images/intro_02.jpg" alt="ゼミ室の活動写真2" class="slide">
+        <img src="./images/intro_03.jpg" alt="ゼミ室の活動写真3" class="slide">
+        <img src="./images/intro_04.jpg" alt="ゼミ室の活動写真4" class="slide">
+        <img src="./images/intro_05.jpg" alt="ゼミ室の活動写真5" class="slide">
+        <img src="./images/intro_06.jpg" alt="ゼミ室の活動写真6" class="slide">
+      </div>
+    </div>
+
+    <!-- Research section -->
+  <header class="section__header">
+    <h1>Research</h1>
+    <p>研究一覧</p>
+    <hr>
+  </header>
+
+  <!-- Year filter buttons -->
+  <div class="year-filter">
+    <button class="year-btn active" data-year="2024">2024年度</button>
+    <button class="year-btn" data-year="2025">2025年度</button>
+  </div>
+
+  <!-- Research card groups by year -->
+  <section class="cards-container">
+    <!-- 2024年度 -->
+    <div class="cards" data-year="2024">
+      <div class="card">
+        <div class="cards-icon">▶</div>
+        <h2>01</h2>
+        <img class="card__icon" src="./images/research_1.svg" alt="">
+        <p>ドローン空撮を用いた<br>山田錦の発育状況把握の効率化</p>
+      </div>
+      <div class="card">
+        <div class="cards-icon">▶</div>
+        <h2>02</h2>
+        <img class="card__icon" src="./images/research_2.svg" alt="">
+        <p>自閉スペクトラム症と過集中<br>～自動検知と通知システムの活用～</p>
+      </div>
+      <div class="card">
+        <div class="cards-icon">▶</div>
+        <h2>03</h2>
+        <img class="card__icon" src="./images/research_3.svg" alt="">
+        <p>画像認識技術を活用した<br>ダンスのパフォーマンス向上支援</p>
+      </div>
+    </div>
+
+    <!-- 2025年度 -->
+    <div class="cards" data-year="2025" style="display: none;">
+      <div class="card">
+        <div class="cards-icon">▶</div>
+        <h2>01</h2>
+        <img class="card__icon" src="./images/research_4.svg" alt="">
+        <p>視線選択によるLLMノートテイカーの設計</p>
+      </div>
+      <div class="card">
+        <div class="cards-icon">▶</div>
+        <h2>02</h2>
+        <img class="card__icon" src="./images/research_5.svg" alt="">
+        <p>WRS災害用ドローン競技に向けた技術向上</p>
+      </div>
+      <div class="card">
+        <div class="cards-icon">▶</div>
+        <h2>03</h2>
+        <img class="card__icon" src="./images/research_6.svg" alt="">
+        <p>悩みの言語化サポートや発達障害支援について</p>
+      </div>
+    </div>
+  </section>
+  <div class="button-wrapper">
+    <a id="more-button" class="more-button" href="Research_2024.html">もっと見る</a>
+  </div>
+
+<!--research year button javascript-->
+<script>
+  const yearButtons = document.querySelectorAll('.year-btn');
+  const yearCards = document.querySelectorAll('.cards');
+  const moreButton = document.getElementById('more-button');
+
+  yearButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedYear = btn.getAttribute('data-year');
+
+      // 버튼 활성화 상태 전환
+      yearButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // 해당 연도 카드 표시
+      yearCards.forEach(cards => {
+        if (cards.getAttribute('data-year') === selectedYear) {
+          cards.style.display = 'flex';
+        } else {
+          cards.style.display = 'none';
+        }
+      });
+
+      // "もっと見る" 버튼의 링크 변경
+      if (selectedYear === "2024") {
+        moreButton.setAttribute("href", "Research_2024.html");
+      } else if (selectedYear === "2025") {
+        moreButton.setAttribute("href", "Research_2025.html");
+      }
+    });
+  });
+</script>
+
+
+
+    <!--About section-->
+    <!--About title-->
+    <header class="section__header">
+      <h1>About</h1>
+      <p>大用研究室は</p>
+      <hr>
+    </header>
+    <!--About card-->
+    <section class="cards">
+      <a href="About_zemi.html" class="card-link">
+        <div class="card">
+          <h2>ゼミ</h2>
+          <img class="card__icon" src="./images/about_1.svg" alt="">
+          <p>ゼミ「メディア工房」を紹介します</p>
+        </div>
+      </a>
+      <a href="About_activity.html" class="card-link">
+        <div class="card">
+          <h2>活動</h2>
+          <img class="card__icon" src="./images/about_2.svg" alt="">
+          <p>ゼミの具体的な活動を紹介します</p>
+        </div>
+      </a>
+      <a href="About_member.html" class="card-link">
+        <div class="card">
+          <h2>メンバー</h2>
+          <img class="card__icon" src="./images/about_3.svg" alt="">
+          <p>研究室の部員を紹介します</p>
+        </div>
+      </a>
+    </section>
+    <div class="button-wrapper">
+    <a id="more-button" class="more-button" href="#">もっと見る</a>
+    </div>
+    
+    <!-- News-section-->
+    <!--News title-->
+    <header class="section__header">
+        <h1>News</h1>
+        <p>ニュース</p>
+        <hr>
+    </header>
+    <!--News box-->
+    <section class="news-section">
+      <a href="./News/News01.html" class="news-link">
+        <div class="news-box">
+          <div class="news-date">2024.11.15</div>
+          <div class="news-content">
+            大用ゼミ室のメンバーたちがリサーチペアに参加しました
+          </div>
+          <div class="news-icon">➔</div>
+        </div>
+      </a>
+
+      <a href="./News/News02.html" class="news-link">
+        <div class="news-box">
+          <div class="news-date">2024.11.26</div>
+          <div class="news-content">
+            大用ゼミ室のメンバーたちがリサーチペアで受賞しました
+          </div>
+          <div class="news-icon">➔</div>
+        </div>
+      </a>
+
+    </section>
+    <div class="button-wrapper">
+    <a id="more-button" class="more-button" href="./News_list.html">もっと見る</a>
+    </div>
+
+  </main>
+  <footer>
+    <h1 class="sr-only"> Copyright </h1>
+    <p>
+      Copyright © 2024 oyo lab. All rights reserved
+    </p>
+  </footer>
+
+  <script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlides() {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
+  }
+
+  // 첫 이미지 표시 후 주기적 전환 시작
+  if (slides.length > 0) {
+    slides[0].classList.add('active');
+    setInterval(showSlides, 4000); // 4초마다 자동 전환
+  }
+</script>
+
+</body>
+</html>
