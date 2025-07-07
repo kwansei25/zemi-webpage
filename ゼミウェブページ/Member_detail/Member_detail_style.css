@@ -1,0 +1,86 @@
+/* 基本設定 */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fa;
+  color: #333;
+}
+
+/* メインボックス */
+.member-detail {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 60px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  line-height: 1.9;
+}
+
+/* 大見出し */
+.member-profile h2 {
+  font-size: 40px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: 4px solid #3f72af;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* 小見出し */
+.member-profile h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #003567;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+}
+
+/* 下線：h3の幅に合わせる */
+.member-profile h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #3f72af;
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+/* 説明テキスト */
+.member-profile p {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  line-height: 2;
+  color: #333;
+  white-space: pre-line;
+}
+
+/* ボタンエリア */
+.button-wrapper {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ボタンデザイン */
+.more-button {
+  display: inline-block;
+  background-color: #3f72af;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.more-button:hover {
+  background-color: #1f4d89;
+  color: #fff;
+}
